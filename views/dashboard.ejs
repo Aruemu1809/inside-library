@@ -1,0 +1,12 @@
+<h2>📚 ファイルライブラリ</h2>
+<ul class="library">
+  <% files.forEach(file => { %>
+    <li class="library-item">
+      <div class="file-meta">
+        <strong><a href="/uploads/<%= file.name %>" download><%= file.name %></a></strong><br>
+        投稿者：<%= file.uploader.displayName %>（<%= file.uploader.group === "core" ? "初期メン" : "撮影班" %>）<br>
+        投稿日：<%= new Date(file.date).toLocaleString("ja-JP") %>
+      </div>
+    </li>
+  <% }) %>
+</ul>
